@@ -1,0 +1,215 @@
+<!--
+You are free to copy and use this sample in accordance with the terms of the
+Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>
+		Google Visualization API Sample
+	</title>
+	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+	<script type="text/javascript" src="html2canvas.js"></script>
+
+
+	<script type="text/javascript" src="http://canvg.googlecode.com/svn/trunk/rgbcolor.js"></script> 
+	<script type="text/javascript" src="http://canvg.googlecode.com/svn/trunk/canvg.js"></script> 
+
+
+	<script type="text/javascript">
+	google.load('visualization', '1.1', {packages: ['controls']});
+	google.load('visualization', '1', {packages: ['corechart']});
+	</script>
+	<script type="text/javascript">
+	var dataView;
+	var areaChart;
+	function drawVisualization() {
+		var query = new google.visualization.Query("http://docs.google.com/spreadsheet/tq?key=0AtN3-Cxg0tC7dC1SSjlqUG54bFJkNjBhUHRwZ0hXX2c&transpose=0&headers=1&range=A23%3AU31&gid=0&pub=1");
+
+		query.send(handleQueryResponse);
+
+
+
+	}
+
+
+	function handleQueryResponse(response){
+		if(response.isError()) {
+			alert("error");
+			return;
+		} 
+		var data = response.getDataTable();
+
+		dataView = new google.visualization.DataView(data);
+
+		
+
+ 		 // Create and draw the visualization.
+
+ 		 areaChart = new google.visualization.AreaChart(document.getElementById('chart'));
+
+ 		 options = {
+ 		 	title : 'Produce Graph',
+ 		 	isStacked: true,
+ 		 	width: 800,
+ 		 	height: 600,
+ 		 	vAxis: {title: "Type"},
+ 		 	hAxis: {title: "Month"}
+
+ 		 };
+
+
+ 		 draw();
+ 		 //new google.visualization.Dashboard(document.getElementById("dashboard")).
+ 		 //bind(producePicker, areaChart).draw(dataView);
+
+ 		}
+
+ 		google.setOnLoadCallback(drawVisualization);
+
+ 		function redraw(){
+ 			var columns = $('#columns').val();
+ 			columns[0] = 0;
+ 			$(columns).each(function (i){
+ 				columns[i] = parseInt(columns[i]);
+ 			});
+ 			var rows = $('#rows').val();
+ 			//rows[0] = 0;
+ 			$(rows).each(function (i){
+ 				rows[i] = parseInt(rows[i]);
+ 			});
+
+ 			console.log(columns);
+ 			console.log(rows);
+ 			dataView.setColumns(columns);
+ 			dataView.setRows(rows);
+ 			draw();
+ 		}
+
+ 		function draw() {
+ 			
+ 			areaChart.draw(dataView, options);
+
+ 			//areaChart.draw(dataView);
+ 		}
+
+ 		function screenshot(){
+ 			console.log("screenshot taken");
+
+ 			// html2canvas(document.body, {
+ 			// 	onrendered: function(canvas) {
+ 			// 		document.body.appendChild(canvas);
+ 			// 	},
+ 			// 	width: 1000,
+ 			// 	height: 1000
+ 			// });
+
+
+
+
+var chart = $("div#chart div div")[0];
+var chart_svg = chart.innerHTML;
+console.log(chart_svg);
+canvas = document.getElementById("screenshot");
+canvas.setAttribute('width', chart_svg.offsetWidth);
+canvas.setAttribute('height', chart_svg.offsetHeight);
+
+canvg(canvas, chart_svg);
+ 			// image_data_uri = canvas.toDataURL("image/png");
+
+ 		}
+
+
+
+
+
+
+ 		</script>
+ 		<style type="text/css">
+ 		select{
+ 			height: 300px;
+ 		}
+ 		</style>
+ 	</head>
+ 	<body style="font-family: Arial;border: 0 none;">
+
+ 		<div id="chart-control">
+ 			<form action="">
+ 				<input type="checkbox" value="1">Beets </input>
+ 				<input type="checkbox"   value="2">Beans, Lima </input>
+ 				<input type="checkbox"   value="3">Parsley & Basil </input>
+ 				<input type="checkbox"   value="4">Okra </input>
+ 				<input type="checkbox"   value="5">Beans, Green </input>
+ 				<input type="checkbox"   value="6">Turnip </input>
+ 				<input type="checkbox"   value="7">Kale </input>
+ 				<input type="checkbox"   value="8">Lettuce </input>
+ 				<input type="checkbox"   value="9">Radish </input>
+ 				<input type="checkbox"   value="10">Carrots </input>
+ 				<input type="checkbox"   value="11">Cabbage </input>
+ 				<input type="checkbox"   value="12">Cucumber </input>
+ 				<input type="checkbox"   value="13">Sweet Potatoes </input>
+ 				<input type="checkbox"   value="14">Eggplant </input>
+ 				<input type="checkbox"   value="15">Collards </input>
+ 				<input type="checkbox"   value="16">Tomatoes </input>
+ 				<input type="checkbox"   value="17">Watermelon </input>
+ 				<input type="checkbox"   value="18">Canteloupe </input>
+ 				<input type="checkbox"   value="19">Squash </input>
+ 				<input type="checkbox"   value="20">Pepper </input>
+ 			</form>
+
+ 		</div>
+
+
+ 		<div id="chart"></div>
+
+
+ 		Plant:
+ 		<select id="columns" name="column" multiple>
+ 			<!-- <option selected value="0">...</option> -->
+ 			<option selected value="1">Beets</option>
+ 			<option selected value="2">Beans, Lima</option>
+ 			<option selected value="3">Parsley & Basil</option>
+ 			<option selected value="4">Okra</option>
+ 			<option selected value="5">Beans, Green</option>
+ 			<option selected value="6">Turnip</option>
+ 			<option selected value="7">Kale</option>
+ 			<option selected value="8">Lettuce</option>
+ 			<option selected value="9">Radish</option>
+ 			<option selected value="10">Carrots</option>
+ 			<option selected value="11">Cabbage</option>
+ 			<option selected value="12">Cucumber</option>
+ 			<option selected value="13">Sweet Potatoes</option>
+ 			<option selected value="14">Eggplant</option>
+ 			<option selected value="15">Collards</option>
+ 			<option selected value="16">Tomatoes</option>
+ 			<option selected value="17">Watermelon</option>
+ 			<option selected value="18">Canteloupe</option>
+ 			<option selected value="19">Squash</option>
+ 			<option selected value="20">Pepper</option>
+
+ 		</select>
+ 		Month:
+ 		<select id="rows" name="row" multiple>
+ 			<!-- <option selected value="0">...</option> -->
+ 			<option selected value="0">May</option>
+ 			<option selected value="1">June</option>
+ 			<option selected value="2">July</option>
+ 			<option selected value="3">August</option>
+ 			<option selected value="4">Sept</option>
+ 			<option selected value="5">Oct</option>
+ 			<option selected value="6">Nov</option>
+ 			<option selected value="7">Dec</option>
+
+ 		</select>
+ 		<button onClick="redraw();">Redraw</button>
+ 		<button onClick="screenshot();">Take Screenshot</button>
+ 		<div id="visualization">
+ 		</div>
+
+ 		<canvas id="screenshot"></canvas>
+ 	</body>
+ 	</html>
+ 	​
