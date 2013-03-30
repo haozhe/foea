@@ -1,0 +1,549 @@
+/* CSS Reset */
+html,body,div,span,object,iframe,
+h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+a,abbr,address,cite,code,del,dfn,em,
+img,ins,q,small,strong,sub,sup,dl,dt,
+dd,ol,ul,li,fieldset,form,label,legend,
+table,caption,tbody,tfoot,thead,tr,th,td{
+	border:0;
+	margin:0;
+	padding:0
+}
+article,aside,figure,figure img,figcaption,
+hgroup,footer,header,nav,section,video,object{
+	display:block
+}
+a img{
+	border:0
+}
+
+/* =============================================================================
+   Global
+   ========================================================================== */
+html { 
+	font-size: 100%; 
+	-webkit-text-size-adjust: 100%; 
+	-ms-text-size-adjust: 100%; 
+}
+html, 
+button, 
+input, 
+select, 
+textarea { 
+	font-family: 'Verdana',sans-serif; 
+	color: #333; 
+}
+body {
+	margin: 0; 
+	font-size: 12px;
+	line-height: 20px; 
+}
+::-moz-selection { 
+	background: #8fc73e;
+	color: #fff; 
+	text-shadow: none; 
+}
+::selection { 
+	background: #8fc73e; 
+	color: #fff; 
+	text-shadow: none; 
+}
+
+.chromeframe { 
+	margin: 0.2em 0; 
+	background: #FF3300; 
+	color: #FFF; 
+	padding: 10px 0; 
+}
+
+.chromeframe a { 
+	color: #FFF; 
+	border-bottom: 1px solid #FFF; 
+}
+
+/* =============================================================================
+   Links
+   ========================================================================== */
+a { 
+	color: #449a2a; 
+	text-decoration: none;
+}
+a:visited { 
+	color: #449a2a; 
+}
+a:hover { 
+	color: #f5c421; 
+}
+a:focus { 
+	outline: thin dotted; 
+}
+a:hover, 
+a:active { 
+	outline: 0; 
+}
+
+/* =============================================================================
+   Headings
+   ========================================================================== */
+h1,
+h2,
+h3,
+h4,
+h5 { 
+	color: #333; 
+	font-family: 'Lato',sans-serif; 
+	letter-spacing: 1px; 
+	text-transform: uppercase; 
+	font-weight: 400; 
+	line-height: 110% 
+}
+h1 {
+	font-size: 20px;
+	color: #333;
+	margin: 10px 0;
+}
+h2 {
+	font-size: 16px;
+	color: #333;
+	margin: 10px 0;
+}
+h3 {
+	font-size: 13px;
+	color: #333;
+	background: url(images/dot-border.jpg) repeat-x bottom;
+	padding: 0 0 7.5px 0;
+	margin: 5px 0;
+} 
+h4, 
+h5, 
+h6 { 
+	font-size: 11px; 
+	line-height: 200%;
+}
+
+p { 
+	padding: 0 0 20px 0; 
+	margin: 0; 
+}
+
+/* =============================================================================
+   List
+   ========================================================================== */
+nav ul, 
+nav ol { 
+	list-style: none; 
+	list-style-image: none; 
+	margin: 0; 
+	padding: 0; 
+}
+/* =============================================================================
+   Theme Backbone
+   ========================================================================== */
+.container { 
+	padding-left: 20px; 
+	padding-right: 20px; 
+}
+.row { 
+	width: 100%; 
+	max-width: 960px; 
+	min-width: 755px; 
+	margin: 0 auto; 
+	overflow: hidden;
+}
+.rowheader { 
+	width: 100%; 
+	margin: 0 auto; 
+	max-width: 960px; 
+	min-width: 755px; 
+	min-height: 50px;
+}
+.column-sidebar {
+
+	float: right;
+	min-height: 1px; 
+}
+.column-half { 
+	margin-right: 3.8%; 
+	float: left;
+	min-height: 1px; 
+}
+.column-content { 
+	padding-left:1%;
+	margin-right: 2.8%; 
+	float: left; 
+	min-height: 1px; 
+}
+.row .column-sidebar { 
+	width: 30.75%; 
+}
+.row .column-half { 
+	width: 48%; 
+}
+.row .column-content {
+	width: 65.4%;
+}
+.row .column-full { 
+	width: 100%; 
+	float: left;
+}
+.nomargin { 
+	margin-right: 0px;
+}
+
+/* =============================================================================
+   Header area
+   ========================================================================== */
+.headerarea { 
+	margin: 20px 0 10px 0; 
+}
+
+
+/* =============================================================================
+   Top menu area
+   ========================================================================== */
+.topmenuarea { 
+	margin: 10px 0 10px 0;  
+}
+#topmenu {
+	background: url(menu-bg.jpg) repeat-x;
+	padding: 5px 0 0 0; 
+	height: 65px;
+}
+#topmenu ul {}
+#topmenu ul li { 
+	float: left; 
+	position: relative; 
+	font-family: 'Lato',sans-serif; 
+	font-size: 13px; 
+	font-weight: 400; 
+	letter-spacing: 1px;
+	text-transform: uppercase; 
+	margin: 0 30px 0 0; 
+	color: #333; 
+}
+
+#topmenu ul li a { 
+	text-decoration: none; 
+	color: #333; 
+	display: block; 
+	line-height: 3.1em;
+}
+#topmenu ul li:hover > ul { 
+	display: block;
+}
+#topmenu ul li:hover > a, 
+#topmenu ul ul :hover > a {
+	color: #8fc73e; 
+}
+#topmenu ul li.current_page_item a { 
+	color: #8fc73e;
+}
+#topmenu select { 
+	display: none;
+}
+
+/* =============================================================================
+   Content
+   ========================================================================== */
+.contentarea{ 
+margin: 0 0 10px 0; 
+}
+#content { 
+	margin: 10px 0; 
+	padding: 0 0 10px 0;
+}	
+.content-box { 
+	width: 95%; 
+	border: 1px solid #EEE; 
+	padding: 10px; 
+	margin: 0; 
+	position: relative;  
+}
+/* =============================================================================
+   list selectors and chart
+   ========================================================================== */
+#chart-control{
+	background: #bedf8f;
+}
+#chart-control ul.lists{
+	width: 100%;
+	float: left;
+	margin: 5px;
+	
+}
+#chart-control h3{
+	margin: 15px 15px 0;
+	
+}
+  #chart-control ul.lists li.rows{
+	list-style: none;
+	float: left;
+	display: inline-block;
+	margin: 5px 5px;
+	min-width: 125px;
+} 
+
+#chart{
+	margin-top: 10px;
+}
+.back{
+	background: #f6f6f6;
+	border: 1px solid #eee;
+}
+	
+/* =============================================================================
+   Sidebar and widget
+   ========================================================================== */
+.widget { }
+.widget ul { 
+	padding: 0; 
+}
+.widget ul li { 
+	color: #aaa; 
+	border-bottom: 1px solid #eee; 
+	padding: 7.5px 0 7.5px 5px; 
+	list-style: none; 
+}
+.widget ul li a { 
+	color: #aaa; 
+}
+.widget ul li a:hover { 
+	color: #8fc73e; 
+}
+	
+.footerarea .widget {}
+.footerarea  .widget ul { 
+	padding: 0 0 0 20px; 
+}
+.footerarea .widget ul li { 
+	color: #EEE; 
+	border: none; 
+	list-style: square; 
+	padding: 2px 0;  
+}
+.footerarea .widget a { 
+	color: #EEE; 
+	border-bottom: 1px dotted #EEE; 
+}
+.footerarea .widget a:hover { 
+	color: #fff; 
+	border-bottom: 1px solid #FFF; 
+}
+
+.widget-title, 
+.eror404 .widgettitle {  
+	font-family: 'Lato',sans-serif; 
+	font-size: 13px; 
+	letter-spacing: 1px; 
+	text-transform: uppercase; 
+	font-weight: 400; 
+	background: url(images/dot-border.jpg) repeat-x bottom; 
+	padding: 7.5px 0; 
+	margin: 7.5px 0; 
+	color: #333; 
+	} 
+
+.footerarea .widget_recentpost_widget ul  { 
+	padding: 0;
+} 
+.footerarea .widget_recentpost_widget ul li{
+	list-style:none;
+}
+
+.footerarea .widget-title { 
+	background: none; 
+	border-bottom: 1px dashed #DDD; 
+	padding: 7.5px 0; 
+	color: #FFF;
+} 
+
+/* =============================================================================
+   Footer
+   ========================================================================== */
+.footerarea { 
+	background: #449a2a; 
+	color: #fff; 
+	padding: 10px 20px; 
+} 
+
+/* =============================================================================
+   Copyright
+   ========================================================================== */
+.copyrightarea { 
+	margin-top: 10px; 
+	padding: 10px 0 0 0; 
+	background: url(images/copyright-bg.jpg) repeat-x top; 
+	color: #FFF;  
+}
+.copyrightarea a{
+	color: #DDD; 
+}
+.copyrightarea a:hover { 
+	color: #fff; 
+}
+
+/* ============= Responsive CSS ============= */
+@media only screen and (min-width: 240px) and ( max-width: 768px) {
+
+/* Theme Backbone */
+.row, 
+body, 
+.container { 
+	width: 100%; 
+	min-width: 0; 
+	margin-left: 0px; 
+	margin-right: 0px; 
+	padding-left: 0px; 
+	padding-right: 0px; 
+}
+.row .column-sidebar, 
+.row .column-half, 
+.row .column-full { 
+	width: auto; 
+	float: none; 
+	margin-left: 0px; 
+	margin-right: 0px; 
+	padding-left: 20px; 
+	padding-right: 20px; 
+}
+.row .column-content {  
+	width: auto; 
+	float: none; 
+	margin-left: 0px; 
+	margin-right: 0px; 
+	padding-left: 20px; 
+	padding-right: 20px; 
+}
+
+/* Top Menu */
+#topmenu { 
+	padding: 5px 20px 0 20px; 
+}
+
+}
+
+
+/* =============================================================================
+   Help class
+   ========================================================================== */
+.clearfix:before, 
+.clearfix:after { 
+	content: ""; 
+	display: table; 
+}
+.clearfix:after { 
+	clear: both; 
+}
+
+/* =============================================================================
+   Print CSS
+   ========================================================================== */
+@media print {
+* { 
+	background: transparent !important; 
+	box-shadow:none !important; 
+	text-shadow: none !important; 
+	-ms-filter: none !important; 
+} 
+a, 
+a:visited { 
+	border-bottom: 1px dotted #000; 
+	padding: 0 0 2px 0;
+}
+abbr[title]:after { 
+	content: " (" attr(title) ")"; 
+}
+.ir a:after, 
+a[href^="javascript:"]:after, 
+a[href^="#"]:after { 
+	content: ""; 
+} 
+pre, 
+blockquote { 
+	border: 1px solid #999; 
+	page-break-inside: avoid; 
+}
+thead { 
+	display: table-header-group; 
+} 
+tr, 
+img { 
+	page-break-inside: avoid; 
+}
+img { 
+	max-width: 100% !important; 
+}
+p, 
+h2, 
+h3 { 
+	orphans: 3; 
+	widows: 3; 
+}
+h2, 
+h3 { 
+	page-break-after: avoid; 
+}
+  
+/* Make sense */
+.row, 
+.rowheader, 
+body, 
+.container { 
+	width: 100%; 
+	min-width: 0; 
+	margin-left: 0px; 
+	margin-right: 0px; 
+	padding-left: 0px; 
+	padding-right: 0px; 
+}
+ .row .column-sidebar, 
+ .row .column-half, 
+ .row .column-content, 
+ .row .column-full { 
+	width: 100%; 
+	float: none; 
+	margin-left: 0px; 
+	margin-right: 0px; 
+	padding-left: 20px; 
+	padding-right: 20px; 
+}
+
+ /* Hide this */
+#searchbox, .topmenuarea, .sliderarea, .footerarea, .widget, .pagination { 
+	display: none 
+}
+
+/* Edit style */
+.content-box { 
+	border: none;
+}
+.entry-date  { 
+	position: relative; 
+	padding: 0; 
+	margin: 0; 
+	left: 0; 
+	top: 0; 
+	font-family: 'Verdana',sans-serif; 
+	letter-spacing: 0px; 
+	text-transform: capitalize; 
+	font-size: 11px; 
+}
+a[rel=bookmark]:after { 
+	content: " (" attr(href) ")"; 
+}
+a[rel=bookmark] { 
+	border: none; 
+}
+.entry-title { 
+	margin: 10px 0 0 0; 
+	padding: 0;
+}
+.entry-title a { 
+	border: none; 
+	color: #8fc73e;
+}
+.entry-author, 
+.entry-author { 
+	padding: 0;
+} 
+}
