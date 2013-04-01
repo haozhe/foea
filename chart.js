@@ -111,7 +111,7 @@ $(document).ready(function (){
 					entryList = json.feed.entry;
 					var checkboxList = "";
 					for (var i = 0; i < entryList.length; i++){
-						checkboxList += '<li class="rows"><input type="checkbox" value="'+(i+1)+'">'+ entryList[i].content.$t +'</li>';
+						checkboxList += '<li class="rows"><input type="checkbox" value="'+(i+1)+'"id="veg'+(i+1)+'" /><label for="veg'+(i+1)+'">'+ entryList[i].content.$t +'</label></li>';
 					}
 
 					$("#chart-control #vegatable-control ul.lists").html(checkboxList);
@@ -146,7 +146,7 @@ $(document).ready(function (){
 					entryList = json.feed.entry;
 					var checkboxList= "";
 					for (var i = 0; i< entryList.length; i++){
-						checkboxList += '<li class="rows"><input type="checkbox" value="'+i+'" checked="true">'+ entryList[i].content.$t +'</li>';	
+						checkboxList += '<li class="rows"><input type="checkbox" value="'+i+'" id="month'+i+'" checked="true"/><label for="month'+i+'">'+ entryList[i].content.$t +'</label></li>';	
 					}
 
 					
