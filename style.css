@@ -281,6 +281,8 @@ margin: 0 0 10px 0;
 }
 #chart-control h3{
 	margin: 15px 15px 0;
+	font-size: 16px;
+	color: #999;
 	
 }
   #chart-control ul.lists li.rows{
