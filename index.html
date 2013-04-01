@@ -1,15 +1,17 @@
-<!--
-You are free to copy and use this sample in accordance with the terms of the
-Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
--->
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 	<title>
 		Google Visualization API Sample
 	</title>
+	
+	<!-- CSS Style -->
+	<link rel="stylesheet" type="text/css" media="all" href="style.css" />
+	
+	<!-- Scripts -->
 	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 	<script type="text/javascript" src="html2canvas.js"></script>
@@ -23,193 +25,83 @@ Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
 	google.load('visualization', '1.1', {packages: ['controls']});
 	google.load('visualization', '1', {packages: ['corechart']});
 	</script>
-	<script type="text/javascript">
-	var dataView;
-	var areaChart;
-	function drawVisualization() {
-		var query = new google.visualization.Query("http://docs.google.com/spreadsheet/tq?key=0AtN3-Cxg0tC7dC1SSjlqUG54bFJkNjBhUHRwZ0hXX2c&transpose=0&headers=1&range=A23%3AU31&gid=0&pub=1");
 
-		query.send(handleQueryResponse);
-
-
-
-	}
-
-
-	function handleQueryResponse(response){
-		if(response.isError()) {
-			alert("error");
-			return;
-		} 
-		var data = response.getDataTable();
-
-		dataView = new google.visualization.DataView(data);
-
-		
-
- 		 // Create and draw the visualization.
-
- 		 areaChart = new google.visualization.AreaChart(document.getElementById('chart'));
-
- 		 options = {
- 		 	title : 'Produce Graph',
- 		 	isStacked: true,
- 		 	width: 800,
- 		 	height: 600,
- 		 	vAxis: {title: "Type"},
- 		 	hAxis: {title: "Month"}
-
- 		 };
-
-
- 		 draw();
- 		 //new google.visualization.Dashboard(document.getElementById("dashboard")).
- 		 //bind(producePicker, areaChart).draw(dataView);
-
- 		}
-
- 		google.setOnLoadCallback(drawVisualization);
-
- 		function redraw(){
- 			var columns = $('#columns').val();
- 			columns[0] = 0;
- 			$(columns).each(function (i){
- 				columns[i] = parseInt(columns[i]);
- 			});
- 			var rows = $('#rows').val();
- 			//rows[0] = 0;
- 			$(rows).each(function (i){
- 				rows[i] = parseInt(rows[i]);
- 			});
-
- 			console.log(columns);
- 			console.log(rows);
- 			dataView.setColumns(columns);
- 			dataView.setRows(rows);
- 			draw();
- 		}
-
- 		function draw() {
- 			
- 			areaChart.draw(dataView, options);
-
- 			//areaChart.draw(dataView);
- 		}
-
- 		function screenshot(){
- 			console.log("screenshot taken");
-
- 			// html2canvas(document.body, {
- 			// 	onrendered: function(canvas) {
- 			// 		document.body.appendChild(canvas);
- 			// 	},
- 			// 	width: 1000,
- 			// 	height: 1000
- 			// });
-
-
-
-
-var chart = $("div#chart div div")[0];
-var chart_svg = chart.innerHTML;
-console.log(chart_svg);
-canvas = document.getElementById("screenshot");
-canvas.setAttribute('width', chart_svg.offsetWidth);
-canvas.setAttribute('height', chart_svg.offsetHeight);
-
-canvg(canvas, chart_svg);
- 			// image_data_uri = canvas.toDataURL("image/png");
-
- 		}
-
-
-
-
-
-
- 		</script>
+	<script type="text/javascript" src="chart.js"></script>
  		<style type="text/css">
  		select{
  			height: 300px;
  		}
  		</style>
  	</head>
- 	<body style="font-family: Arial;border: 0 none;">
+ 	<body>
 
- 		<div id="chart-control">
- 			<form action="">
- 				<input type="checkbox" value="1">Beets </input>
- 				<input type="checkbox"   value="2">Beans, Lima </input>
- 				<input type="checkbox"   value="3">Parsley & Basil </input>
- 				<input type="checkbox"   value="4">Okra </input>
- 				<input type="checkbox"   value="5">Beans, Green </input>
- 				<input type="checkbox"   value="6">Turnip </input>
- 				<input type="checkbox"   value="7">Kale </input>
- 				<input type="checkbox"   value="8">Lettuce </input>
- 				<input type="checkbox"   value="9">Radish </input>
- 				<input type="checkbox"   value="10">Carrots </input>
- 				<input type="checkbox"   value="11">Cabbage </input>
- 				<input type="checkbox"   value="12">Cucumber </input>
- 				<input type="checkbox"   value="13">Sweet Potatoes </input>
- 				<input type="checkbox"   value="14">Eggplant </input>
- 				<input type="checkbox"   value="15">Collards </input>
- 				<input type="checkbox"   value="16">Tomatoes </input>
- 				<input type="checkbox"   value="17">Watermelon </input>
- 				<input type="checkbox"   value="18">Canteloupe </input>
- 				<input type="checkbox"   value="19">Squash </input>
- 				<input type="checkbox"   value="20">Pepper </input>
- 			</form>
+ 		<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
+ 		<!-- Logos & Searchbox -->
+ 		<div class="container headerarea">
+ 			<div class="row ">
+ 				<div class="column-half ">
+ 					<header>
+ 						<div id="logo">
+ 							<a href="http://www.haozhe.li/foea/" title="Friends of English Avenue" rel="home">
+ 								<img src="FEALogoFlower2.jpg" width="300" height="70" alt="" />
+ 							</a>
+ 						</div>
+ 					</header>
+ 				</div>
+ 			</div>
+ 		</div>
+
+ 		<!-- Top Menu -->
+ 		<div class="container topmenuarea">
+ 			<div class="rowheader">
+ 				<div class="column-full">
+ 					<header>
+ 						<nav id="topmenu" role="navigation">
+ 							<div class="menu"><ul><li class="page_item page-item-5"><a href="http://www.haozhe.li/foea/about/">About</a></li></ul></div>
+ 						</nav>
+ 					</header>
+ 				</div>
+ 			</div>
+ 		</div>
+ 		<div class="container">
+ 			<div id="chart-control" class="row">
+ 				<form action="#" id="vegatable-control">
+ 					<h3>Select vegetables to draw graph</h3>
+ 					<ul class="lists">
+ 					</ul>
+ 				</form>
+
+ 				<form action="#" id="time-control">
+ 					<h3>Select months to draw graph</h3>
+ 					<ul class="lists">
+ 					</ul>
+ 				</form>
+ 			</div>
+ 		</div>
+
+ 		<div id="chart" class="row back"></div>
+
+ 		 		<button type="button" class="download">Download Image</button>
+
+ 		<canvas id="screenshot" style="display:none;"></canvas>
+ 		
+
+
+ 		<!-- Footer -->
+ 		<div class="container footerarea">
+ 			<div class="row">
+
+ 				<div class="column-full nomargin">
+ 					<!-- Footer widget right -->
+ 					<aside id="text-4" class="widget widget_text"><h3 class="widget-title">About</h3>			<div class="textwidget">Friends of English Avenue, Inc. (FEA) is a 501c3 non profit organization founded on justice, generosity and virtue. FEA assists the English Avenue neighborhood through continuing focus on this depressed area and aggregating resources to accomplish several objectives. <a href="http://www.haozhe.li/foea/about/"  target="_blank">Read more</a>»</div>
+ 					</aside>			</div>
+ 				</div>
+ 			</div>
  		</div>
 
 
- 		<div id="chart"></div>
 
-
- 		Plant:
- 		<select id="columns" name="column" multiple>
- 			<!-- <option selected value="0">...</option> -->
- 			<option selected value="1">Beets</option>
- 			<option selected value="2">Beans, Lima</option>
- 			<option selected value="3">Parsley & Basil</option>
- 			<option selected value="4">Okra</option>
- 			<option selected value="5">Beans, Green</option>
- 			<option selected value="6">Turnip</option>
- 			<option selected value="7">Kale</option>
- 			<option selected value="8">Lettuce</option>
- 			<option selected value="9">Radish</option>
- 			<option selected value="10">Carrots</option>
- 			<option selected value="11">Cabbage</option>
- 			<option selected value="12">Cucumber</option>
- 			<option selected value="13">Sweet Potatoes</option>
- 			<option selected value="14">Eggplant</option>
- 			<option selected value="15">Collards</option>
- 			<option selected value="16">Tomatoes</option>
- 			<option selected value="17">Watermelon</option>
- 			<option selected value="18">Canteloupe</option>
- 			<option selected value="19">Squash</option>
- 			<option selected value="20">Pepper</option>
-
- 		</select>
- 		Month:
- 		<select id="rows" name="row" multiple>
- 			<!-- <option selected value="0">...</option> -->
- 			<option selected value="0">May</option>
- 			<option selected value="1">June</option>
- 			<option selected value="2">July</option>
- 			<option selected value="3">August</option>
- 			<option selected value="4">Sept</option>
- 			<option selected value="5">Oct</option>
- 			<option selected value="6">Nov</option>
- 			<option selected value="7">Dec</option>
-
- 		</select>
- 		<button onClick="redraw();">Redraw</button>
- 		<button onClick="screenshot();">Take Screenshot</button>
- 		<div id="visualization">
- 		</div>
-
- 		<canvas id="screenshot"></canvas>
  	</body>
  	</html>
  	​
