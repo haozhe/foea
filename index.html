@@ -5,7 +5,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 	<title>
-		Google Visualization API Sample
+		FOEA Produce Visualization
 	</title>
 	
 	<!-- CSS Style -->
@@ -15,7 +15,7 @@
 	<!-- Scripts -->
 	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-	<script type="text/javascript" src="html2canvas.js"></script>
+	<script type="text/javascript" src="js/html2canvas.js"></script>
 
 
 	<script type="text/javascript" src="http://canvg.googlecode.com/svn/trunk/rgbcolor.js"></script> 
@@ -27,73 +27,118 @@
 	google.load('visualization', '1', {packages: ['corechart']});
 	</script>
 
-	<script type="text/javascript" src="chart.js"></script>
- 		<style type="text/css">
- 		select{
- 			height: 300px;
- 		}
- 		</style>
- 	</head>
- 	<body>
-
- 		<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
-
- 		<!-- Logos & Searchbox -->
- 		<div class="container headerarea">
- 			<div class="row ">
- 				<div class="column-half ">
- 					<header>
- 						<div id="logo">
- 							<a href="http://www.haozhe.li/foea/" title="Friends of English Avenue" rel="home">
- 								<img src="FEALogoFlower2.jpg" width="300" height="70" alt="" />
- 							</a>
- 						</div>
- 					</header>
- 				</div>
- 			</div>
- 		</div>
-
- 		
- 		<div class="container">
- 			<div id="chart-control" class="row">
- 				<form action="#" id="vegatable-control">
- 					<h3>Select vegetables</h3>
- 					<ul class="lists">
- 					</ul>
- 				</form>
- 			<div class="padbox">
-
- 				<form action="#" id="time-control">
- 					<h3>Select months</h3>
- 					<ul class="lists">
- 					</ul>
- 				</form>
- 			</div>
- 			</div>
- 		</div>
-
- 		<div id="chart" class="row back"></div>
-
- 		<div class="row"><button type="button" class="download">Download Image</button></div>
-
- 		<canvas id="screenshot" style="display:none;"></canvas>
- 		
+	<script type="text/javascript" src="js/chart.js"></script>
+	<style type="text/css">
+	select{
+		height: 300px;
+	}
+	</style>
 
 
- 		<!-- Footer -->
- 		<div class="container footerarea">
- 			<div class="row">
+	<!-- Code and style for slider -->
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/slider.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/slider.css">
 
- 				<div class="column-full nomargin">
- 					<!-- Footer widget right -->
- 					<aside id="text-4" class="widget widget_text"><h3 class="widget-title">About</h3>			<div class="textwidget">Friends of English Avenue, Inc. (FEA) is a 501c3 non profit organization founded on justice, generosity and virtue. FEA assists the English Avenue neighborhood through continuing focus on this depressed area and aggregating resources to accomplish several objectives. <a href="http://www.haozhe.li/foea/about/"  target="_blank">Read more</a>»</div>
- 					</aside>			</div>
- 				</div>
- 			</div>
- 		</div>
+	<script type="text/javascript" >
+	// $( function(){
+	// 	// create the slider
+	// 	( new Razorfish.Slider( {
+	// 		        width : 500
+	// 		, handleWidth : 12
+	// 		,    useRange : true
+	// 		,        tabs : [
+	// 			  { text : 'Jan'}
+	// 			, { text : 'Feb'}
+	// 			, { text : 'Mar'}
+	// 			, { text : 'Apr'}
+	// 			, { text : 'May'}
+	// 			, { text : 'Jun'}
+	// 			, { text : 'Jul'}
+	// 			, { text : 'Aug'}
+	// 			, { text : 'Sep'}
+	// 			, { text : 'Oct'}
+	// 			, { text : 'Nov'}
+	// 			, { text : 'Dec'}
+	// 		]
+	// 	} ) )
+	// 		.prependTo( "div#slider-container")
+	// 		.bind     ( 'range', changeRange )
+	// 		.setRange ( 0, 11 );
+	// } );
+
+	// function changeRange( ev, min, max ){
+	// 	$( '#status' ).text( min + ' -- ' + max )
+	// }
+	</script>
+</head>
+<body>
+
+	<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+	<!-- Logos & Searchbox -->
+	<div class="container headerarea">
+		<div class="row ">
+			<div class="column-half ">
+				<header>
+					<div id="logo">
+						<a href="http://www.haozhe.li/foea/" title="Friends of English Avenue" rel="home">
+							<img src="FEALogoFlower2.jpg" width="300" height="70" alt="" />
+						</a>
+					</div>
+				</header>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="container">
+		<div id="chart-control" class="row">
+			<form action="#" id="vegatable-control">
+				<h3>Select vegetables</h3>
+				<ul class="lists">
+				</ul>
+			</form>
+			<div class="padbox">
 
 
 
- 	</body>
- 	</html>
- 	​
+				<form action="#" id="time-control">
+					<h3>Select months</h3>
+					<ul class="lists">
+					</ul>
+				</form>
+
+
+			</div>
+			<div id="slider-container">
+				<div id="status" style="padding-top: 50px;"></div>				
+			</div>
+		</div>
+	</div>
+
+	<div id="chart" class="row back"></div>
+
+	<div class="row"><button type="button" class="download">Download Image</button></div>
+
+	<canvas id="screenshot" style="display:none;"></canvas>
+
+
+
+	<!-- Footer -->
+	<div class="container footerarea">
+		<div class="row">
+
+			<div class="column-full nomargin">
+				<!-- Footer widget right -->
+				<aside id="text-4" class="widget widget_text"><h3 class="widget-title">About</h3>			<div class="textwidget">Friends of English Avenue, Inc. (FEA) is a 501c3 non profit organization founded on justice, generosity and virtue. FEA assists the English Avenue neighborhood through continuing focus on this depressed area and aggregating resources to accomplish several objectives. <a href="http://www.haozhe.li/foea/about/"  target="_blank">Read more</a>»</div>
+				</aside>			</div>
+			</div>
+		</div>
+	</div>
+
+
+
+</body>
+</html>
+​
