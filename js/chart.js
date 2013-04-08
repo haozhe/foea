@@ -37,16 +37,22 @@ function handleQueryResponse(response){
 
  		 // Create and draw the visualization.
 
- 		 areaChart = new google.visualization.AreaChart(document.getElementById('chart'));
+ 		 areaChart = new google.visualization.LineChart(document.getElementById('chart'));
 
  		 options = {
- 		 	title : 'Produce Graph',
+ 		 	chartArea:{left:"8%",top:"10%",width:"78%",height:"80%"},
  		 	isStacked: false,
  		 	width: 960,
- 		 	height: 600,
- 		 	vAxis: {title: "Produce Poundage"},
- 		 	hAxis: {title: "Month"}
-
+ 		 	height: 500,
+ 		 	vAxis: {title: "Produce Poundage (in lbs)",  titleTextStyle: {color: '#AAAAAA'}, gridlines:{color: '#DDD', count: 8}, textStyle:{color: '#666'},},
+ 		 	hAxis: {title: "", textStyle:{color: '#666'},},
+ 		 	focusTarget:'category',
+ 		 	fontName:'Lato',
+ 		 	lineWidth:2,
+ 		 	pointSize:5,
+ 		 	tooltip:{textStyle: {color: '#666',fontSize: 12}, showColorCode: true},
+ 		 	interpolateNulls:true,
+ 		 	legend:{textStyle: {color: '#666', fontSize: 12}},
  		 };
 
  		 dataView.setColumns([0, 1]);
@@ -156,7 +162,8 @@ function handleQueryResponse(response){
 					}
 
 					$("#chart-control #vegatable-control ul.lists").html(checkboxList);
-
+					
+					
 					//Set checkbox #1 to be checked					
 					$("#chart-control #vegatable-control ul.lists li:first-child input").prop("checked", "checked");
 
@@ -219,6 +226,8 @@ function handleQueryResponse(response){
 			redraw(vegetables, months);
 
 		}
+		
+		
 
 		// $("#chart-control #time-control ul.lists").html(checkboxList);
 

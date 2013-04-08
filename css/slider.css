@@ -8,23 +8,25 @@
 .slider .slider-bar, .slider .slider-range {
 	position      : relative;
 	top           : 0px;
-	left          : 0px;
+	left          : 15px;
 	right         : 0px;
-	border-radius : 3px;
+	border-radius : 11px;
 	background    : #EEE;
 	box-shadow    : inset 0px 0px 5px #CCC;
-	height        : 5px;
+	height        : 22px;
+	width: 930px;
 }
 
 .slider .slider-range {
-	background : #DDD;
-	box-shadow : inset 0px 0px 5px #777;
+	background : #8dd178;
+	box-shadow : inset 0px 0px 10px #36851d;
 	cursor     : pointer;
+	height: 22px;
 }
 
 .slider .slider-tabs {
 	position : absolute;
-	top      : 5px;
+	top      : 0px;
 	left     : 0px;
 }
 
@@ -35,14 +37,14 @@
 
 .slider .slider-tab span {
 	display : inline-block;
-	padding : 5px 0 0 0;
+	padding : 6px 0 0 0;
 	cursor  : pointer;
 }
 
 .slider .slider-handles {
 	position : absolute;
 	top      : -5px;
-	left     : 0px;
+	left     : -6px;
 }
 
 .slider .slider-handle {
@@ -60,19 +62,19 @@
 .slider .slider-notch {
 	margin     : 0 auto;
 	width      : 4px;
-	height     : 3px;
-	background : #EEE;
-	box-shadow : inset 0px 0px 5px #CCC;
+	height     : 22px;
+	background : #dddddd;
+	box-shadow : inset 0px 0px 2px #CCC;
 }
 
 .slider .slider-notch.active {
-	background : #DDD;
-	box-shadow : inset 0px 0px 5px #999;
+	background : #6dae58;
+	box-shadow : inset 0px 0px 2px #449a2a;
 }
 
 .slider .slider-handle {
-	width      : 12px;
-	height     : 18px;
+	width      : 25px;
+	height     : 32px;
 	background : url( ../images/slider-tab.png );
 }
 

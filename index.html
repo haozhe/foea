@@ -71,6 +71,16 @@
 	// 	$( '#status' ).text( min + ' -- ' + max )
 	// }
 	</script>
+	<script type="text/javascript">
+	function checkAll(bx) {
+		  var cbs = document.getElementsByTagName('input');
+		  for(var i=0; i < cbs.length; i++) {
+		    if(cbs[i].type == 'checkbox') {
+		      cbs[i].checked = bx.checked;
+		    }
+		  }
+		}
+	</script>
 </head>
 <body>
 
@@ -95,30 +105,23 @@
 	<div class="container">
 		<div id="chart-control" class="row">
 			<form action="#" id="vegatable-control">
+				<div class="formheading">
 				<h3>Select vegetables</h3>
+				<div class="select-all"><input id="selectall" type="checkbox" class="regular-checkbox" onclick="checkAll(this)"/><label for="selectall">Select all</label></div>
+				</div>
 				<ul class="lists">
 				</ul>
 			</form>
-			<div class="padbox">
-
-
-
-				<form action="#" id="time-control">
-					<h3>Select months</h3>
-					<ul class="lists">
-					</ul>
-				</form>
-
-
-			</div>
-			<div id="slider-container">
-				<div id="status" style="padding-top: 50px;"></div>				
-			</div>
+			
 		</div>
 	</div>
 
 	<div id="chart" class="row back"></div>
-
+	<div class="row padbox back">
+			<div id="slider-container">
+				<div id="status" style="padding-top: 50px;"></div>				
+			</div>
+	</div>
 	<div class="row"><button type="button" class="download">Download Image</button></div>
 
 	<canvas id="screenshot" style="display:none;"></canvas>
@@ -135,7 +138,6 @@
 				</aside>			</div>
 			</div>
 		</div>
-	</div>
 
 
 

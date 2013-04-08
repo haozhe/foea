@@ -268,6 +268,16 @@ margin: 0 0 10px 0;
 	border-bottom: 1px dashed #ddd;
 	
 }
+.formheading{
+	background: #eee;
+	float: left;
+	width: 100%;
+}
+.padbox{
+	padding-top: 30px;
+	background: #f6f6f6;
+	
+}
 
 #vegatable-control, #time-control{
 	float: left;
@@ -280,9 +290,10 @@ margin: 0 0 10px 0;
 	
 }
 #chart-control h3{
-	margin: 15px 15px 0;
+	margin: 12px 15px 5px;
 	font-size: 16px;
 	color: #999;
+	float: left;
 	
 }
   #chart-control ul.lists li.rows{
@@ -317,9 +328,9 @@ margin: 0 0 10px 0;
 }
  
 .regular-checkbox:checked {
-    background-color: #e9ecee;
     border: 1px solid #adb8c0;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+    background : #8dd178;
+	box-shadow : inset 0px 2px 5px #36851d;
     color: #99a1a7;
 }
 .regular-checkbox:checked:after {
@@ -328,12 +339,24 @@ margin: 0 0 10px 0;
     position: absolute;
     top: 0px;
     left: 3px;
-    color: #99a1a7;
+    color: #ffffff;
 }
 li.rows label{
 	float: left;
 	padding: 3px;
 	font-family: 'Lato',sans-serif; 
+	
+}
+.select-all{
+	float: right;
+	margin: 8px 15px 7px;
+}
+.select-all label{
+	float: left;
+	padding: 3px;
+	font-family: 'Lato',sans-serif; 
+	text-transform: uppercase;
+	color: #999;
 	
 }
 .download {
